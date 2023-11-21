@@ -52,7 +52,7 @@ abstract class SignalRPlatformApi {
   void onStatusChange(StatusChangeResult statusChangeResult);
 
   @async
-  void onNewMessage(String hubName, String message);
+  void onNewMessage(String hubName, Object message);
 }
 
 void configurePigeon(PigeonOptions opts) {

@@ -304,7 +304,7 @@ abstract class SignalRPlatformApi {
   static const MessageCodec<Object?> codec = _SignalRPlatformApiCodec();
 
   Future<void> onStatusChange(StatusChangeResult statusChangeResult);
-  Future<void> onNewMessage(String hubName, String message);
+  Future<void> onNewMessage(String hubName, Object message);
   static void setup(SignalRPlatformApi? api,
       {BinaryMessenger? binaryMessenger}) {
     {

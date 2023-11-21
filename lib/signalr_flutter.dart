@@ -17,7 +17,7 @@ class SignalR extends SignalrPlatformInterface implements SignalRPlatformApi {
     List<String>? hubMethods,
     Transport transport = Transport.auto,
     void Function(ConnectionStatus?)? statusChangeCallback,
-    void Function(String, String)? hubCallback,
+    void Function(String, Object)? hubCallback,
     this.connectionErrorCallback,
   }) : super(
           baseUrl,
@@ -32,7 +32,7 @@ class SignalR extends SignalrPlatformInterface implements SignalRPlatformApi {
   //---- Callback Methods ----//
   // ------------------------//
   @override
-  Future<void> onNewMessage(String hubName, String message) async {
+  Future<void> onNewMessage(String hubName, Object message) async {
     hubCallback?.call(hubName, message);
   }
 
